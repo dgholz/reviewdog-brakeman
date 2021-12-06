@@ -8,7 +8,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: brakeman
-        uses: reviewdog/action-brakeman@v1
+        uses: dgholz/action-brakeman@master
         with:
           brakeman_version: gemfile
           level: info
