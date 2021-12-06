@@ -1,0 +1,19 @@
+name: reviewdog
+on: [pull_request, workflow_dispatch]
+jobs:
+  brakeman:
+    name: runner / brakeman
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: brakeman
+        uses: reviewdog/action-brakeman@v1
+        with:
+          brakeman_version: gemfile
+          level: info
+          brakeman_flags: --config-file ./config/brakeman.yml
+          github_token: ${{ secrets.github_token }}
+          filter_mode: nofilter
+          fail_on_error: true
+          reporter: github-pr-review
