@@ -7,8 +7,9 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
       - name: brakeman
-        uses: dgholz/action-brakeman@master
+        uses: dgholz/action-brakeman@test
         with:
           brakeman_version: gemfile
           level: info
