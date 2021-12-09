@@ -13,7 +13,6 @@ jobs:
         with:
           brakeman_version: gemfile
           level: info
-          brakeman_flags: --config-file ./config/brakeman.yml
           github_token: ${{ secrets.github_token }}
           filter_mode: nofilter
           fail_on_error: true
